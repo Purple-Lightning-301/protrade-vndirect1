@@ -45,6 +45,7 @@ window.onresize = () => {
 function showRight(){
     document.getElementsByClassName("main-right")[0].style.display = "block";
     document.getElementsByClassName("main-content")[0].style.gridTemplateColumns  = "1fr 350px 400px";
+    document.getElementsByClassName("main-center")[0].style.width = "350px";
     document.getElementsByClassName("command-menu")[0].style.width = "400px";
 }
 
@@ -59,6 +60,7 @@ function openDiv2(evt, tabName, tablink, close) {
     }
     document.getElementsByClassName("double")[0].style.width = "400px";
     document.getElementById(tabName).style.display = "block";
+    document.getElementsByClassName("main-center")[0].style.width = "350px";
     evt.currentTarget.className += " active";
 
     document.getElementById("actionDefault2").click() ;
@@ -69,8 +71,9 @@ function openDiv2(evt, tabName, tablink, close) {
 function closeButton(tablink){
     var tablinks = document.getElementsByClassName(tablink);
     document.getElementsByClassName("main-right")[0].style.display = "none";
-    document.getElementsByClassName("main-content")[0].style.gridTemplateColumns  = "1fr 350px";
-    document.getElementsByClassName("command-menu")[0].style.width = "350px";
+    document.getElementsByClassName("main-content")[0].style.gridTemplateColumns  = "1fr 400px";
+    document.getElementsByClassName("command-menu")[0].style.width = "400px";
+    document.getElementsByClassName("main-center")[0].style.width = "400px";
     for (var i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
@@ -78,6 +81,7 @@ function closeButton(tablink){
 function showCommandFilter(closeName, openName, radioChecked){
   document.getElementsByClassName(closeName)[0].style.display = "none";
   document.getElementsByClassName(openName)[0].style.display = "block";
+  document.getElementsByClassName("main-center")[0].style.width = "350px";
   document.getElementById(radioChecked).click();
 }
 
