@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style/trade.css" rel="stylesheet">
+    <link href="./images/unnamed.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <title>Protrade</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <div class="logo-time">
+                    <div class="logo">
+                        <img class="logo-img" src="./images/logo.svg">
+                    </div>
+                    <div class="time flex">
+                        <p id="hours">13:44:11</p> &nbsp;
+                        <p id="days"> 2021/03/29</p>
+                    </div>
+                </div>
+                <div class="menu flex">
+                    <ul class="flex menu-list">
+                        <li><a href="#" class="tabActive">Trang chủ</a></li>
+                        <li><a href="#">Tài sản</a></li>
+                        <li><a href="#">Hướng dẫn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-center flex">
+                <div class="profit flex">
+                    <p>Lãi/Lỗ:</p> &nbsp;
+                    <p class="profit-value">0</p>
+                </div>
+                <div class="pro">
+                    <button class="pro-link">
+                        <span class="pro-icon">
+                            <i class="fa fa-trophy" aria-hidden="true"></i>
+                        </span>
+                        <a href="#">Top cao thủ phái sinh</a>
+                    </button>
+                </div>
+            </div>
+            <div class="header-right flex">
+                <div class="version">
+                    BẢN TRIAL
+                </div>
+                <a href="https://id.vndirect.com.vn/login?httpReferer=https%3A%2F%2Fmyaccount.vndirect.com.vn%2Fauth?response=%2Faccount-info%3Ftab%3Daccount-register"
+                    target="_blank" class="upgrade">Nâng cấp tài khoản</a>
+                <div class="user flex">
+                    <div class="user-button flex">
+                        <i class="fa fa-user" aria-hidden="true"></i>&nbsp;
+                        Phi Long Nguyễn &nbsp;
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <a href="./login.html" id="logout">
+                            <span><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content grid">
+            <div class="main-left grid">
+                <div class="chart">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container" id="VN30intra">
+                        <div id="tradingview_ef18c"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                            new TradingView.widget(
+                                {
+                                    "width": '100%',
+                                    "height": '100%',
+                                    "symbol": "NASDAQ:AAPL",
+                                    "interval": "D",
+                                    "timezone": "Etc/UTC",
+                                    "theme": "dark",
+                                    "style": "1",
+                                    "locale": "vi_VN",
+                                    "toolbar_bg": "#f1f3f6",
+                                    "enable_publishing": false,
+                                    "withdateranges": true,
+                                    "hide_side_toolbar": false,
+                                    "allow_symbol_change": true,
+                                    "container_id": "tradingview_ef18c"
+                                }
+                            );
+                        </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+                <div class="dealing-data grid">
+                    <div class="dealing-data-content">
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="dealing-chart tradingview-widget-container" id="intraday1">
+                            <div id="tradingview_5aa24"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                            <script type="text/javascript">
+                                new TradingView.MediumWidget(
+                                    {
+                                        "symbols": [
+                                            [
+                                                "Apple",
+                                                "AAPL"
+                                            ],
+                                            [
+                                                "Google",
+                                                "GOOGL"
+                                            ],
+                                            [
+                                                "Microsoft",
+                                                "MSFT"
+                                            ]
+                                        ],
+                                        "chartOnly": false,
+                                        "width": '100%',
+                                        "height": '100%',
+                                        "locale": "vi_VN",
+                                        "colorTheme": "dark",
+                                        "gridLineColor": "#2a2e39",
+                                        "trendLineColor": "#1976d2",
+                                        "fontColor": "#787b86",
+                                        "underLineColor": "rgba(55, 166, 239, 0.15)",
+                                        "isTransparent": false,
+                                        "autosize": false,
+                                        "container_id": "tradingview_5aa24"
+                                    }
+                                );
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                        <!--Pie chart-->
+                        <!-- <div class="dealing-chart" id="pie-chart" style="width: 100%; height: 100%;">
+                            <iframe src="https://mkw.vndirect.com.vn/market_cap?color=gray&amp;height=280" title="Chart" width="100%" height="100%"></iframe>
+                        </div> -->
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container dealing-chart" id="pie-chart">
+                            <div id="tradingview_c8b43"></div>
+                            <div class="tradingview-widget-copyright"><a
+                                    href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener"
+                                    target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                            <script type="text/javascript">
+                                new TradingView.widget(
+                                    {
+                                        "width": '100%',
+                                        "height": '100%',
+                                        "symbol": "NASDAQ:AAPL",
+                                        "interval": "D",
+                                        "timezone": "Etc/UTC",
+                                        "theme": "dark",
+                                        "style": "1",
+                                        "locale": "en",
+                                        "toolbar_bg": "#f1f3f6",
+                                        "enable_publishing": false,
+                                        "allow_symbol_change": true,
+                                        "container_id": "tradingview_c8b43"
+                                    }
+                                );
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container dealing-chart" id="vn30">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/"
+                                    rel="noopener" target="_blank"><span class="blue-text">Financial Markets</span></a>
+                                by TradingView</div>
+                            <script type="text/javascript"
+                                src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+                                    {
+                                        "width": "100%",
+                                            "height": "100%",
+                                                "symbolsGroups": [
+                                                    {
+                                                        "name": "Indices",
+                                                        "originalName": "Indices",
+                                                        "symbols": [
+                                                            {
+                                                                "name": "FOREXCOM:SPXUSD",
+                                                                "displayName": "S&P 500"
+                                                            },
+                                                            {
+                                                                "name": "FOREXCOM:NSXUSD",
+                                                                "displayName": "Nasdaq 100"
+                                                            },
+                                                            {
+                                                                "name": "FOREXCOM:DJI",
+                                                                "displayName": "Dow 30"
+                                                            },
+                                                            {
+                                                                "name": "INDEX:NKY",
+                                                                "displayName": "Nikkei 225"
+                                                            },
+                                                            {
+                                                                "name": "INDEX:DEU30",
+                                                                "displayName": "DAX Index"
+                                                            },
+                                                            {
+                                                                "name": "FOREXCOM:UKXGBP",
+                                                                "displayName": "FTSE 100"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "name": "Commodities",
+                                                        "originalName": "Commodities",
+                                                        "symbols": [
+                                                            {
+                                                                "name": "CME_MINI:ES1!",
+                                                                "displayName": "S&P 500"
+                                                            },
+                                                            {
+                                                                "name": "CME:6E1!",
+                                                                "displayName": "Euro"
+                                                            },
+                                                            {
+                                                                "name": "COMEX:GC1!",
+                                                                "displayName": "Gold"
+                                                            },
+                                                            {
+                                                                "name": "NYMEX:CL1!",
+                                                                "displayName": "Crude Oil"
+                                                            },
+                                                            {
+                                                                "name": "NYMEX:NG1!",
+                                                                "displayName": "Natural Gas"
+                                                            },
+                                                            {
+                                                                "name": "CBOT:ZC1!",
+                                                                "displayName": "Corn"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "name": "Bonds",
+                                                        "originalName": "Bonds",
+                                                        "symbols": [
+                                                            {
+                                                                "name": "CME:GE1!",
+                                                                "displayName": "Eurodollar"
+                                                            },
+                                                            {
+                                                                "name": "CBOT:ZB1!",
+                                                                "displayName": "T-Bond"
+                                                            },
+                                                            {
+                                                                "name": "CBOT:UB1!",
+                                                                "displayName": "Ultra T-Bond"
+                                                            },
+                                                            {
+                                                                "name": "EUREX:FGBL1!",
+                                                                "displayName": "Euro Bund"
+                                                            },
+                                                            {
+                                                                "name": "EUREX:FBTP1!",
+                                                                "displayName": "Euro BTP"
+                                                            },
+                                                            {
+                                                                "name": "EUREX:FGBM1!",
+                                                                "displayName": "Euro BOBL"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "name": "Forex",
+                                                        "originalName": "Forex",
+                                                        "symbols": [
+                                                            {
+                                                                "name": "FX:EURUSD"
+                                                            },
+                                                            {
+                                                                "name": "FX:GBPUSD"
+                                                            },
+                                                            {
+                                                                "name": "FX:USDJPY"
+                                                            },
+                                                            {
+                                                                "name": "FX:USDCHF"
+                                                            },
+                                                            {
+                                                                "name": "FX:AUDUSD"
+                                                            },
+                                                            {
+                                                                "name": "FX:USDCAD"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                    "showSymbolLogo": true,
+                                                        "colorTheme": "dark",
+                                                            "isTransparent": false,
+                                                                "locale": "en"
+                                    }
+                                </script>
+                        </div>
+
+                        <!-- TradingView Widget END -->
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container dealing-chart" id="column-chart">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <div class="tradingview-widget-copyright"><a
+                                    href="https://vn.tradingview.com/symbols/NASDAQ-AAPL/technicals/" rel="noopener"
+                                    target="_blank"><span class="blue-text">Phân tích Kỹ thuật cho AAPL</span></a> bởi
+                                TradingView</div>
+                            <script type="text/javascript"
+                                src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js"
+                                async>
+                                    {
+                                        "interval": "1m",
+                                            "width": "100%",
+                                                "isTransparent": false,
+                                                    "height": "100%",
+                                                        "symbol": "NASDAQ:AAPL",
+                                                            "showIntervalTabs": true,
+                                                                "locale": "vi_VN",
+                                                                    "colorTheme": "dark"
+                                    }
+                                </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </div>
+                    <div class="dealing-menu flex">
+                        <p class="copy-right">Bản quyền thuộc về VNDIRECT © 2021. v2.2.2</p>
+                        <ul class="flex chart-list">
+                            <li id="actionDefault1"  class="dealing-button" onclick="openDiv2(event, 'intraday1', 'dealing-button', 'dealing-chart')"><a
+                                    href="#">VN30
+                                    INTRADAY</a></li>
+                            <li onclick="openDiv2(event, 'vn30', 'dealing-button', 'dealing-chart')"  class="dealing-button" ><a id="vn30" href="#">VN30</a>
+                            </li>
+                            <li onclick="openDiv2(event, 'column-chart', 'dealing-button', 'dealing-chart')"  class="dealing-button">
+                                <a href="#">
+                                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li onclick="openDiv2(event, 'pie-chart', 'dealing-button', 'dealing-chart')"  class="dealing-button">
+                                <a href="#">
+                                    <i class="fa fa-pie-chart" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main-center grid">
+                <div class="main-center-top">
+                    <div class="VN30tableHeader flex text-white">
+                        <p style="font-size: 16px; font-weight: 700;">VN30F2104</p>
+                        <div class="floor flex flex-column space-evenly">
+                            <p>Sàn:</p>
+                            <p class="text-gem">1108.5</p>
+                        </div>
+                        <div class="ave flex flex-column space-evenly">
+                            <p>TC:</p>
+                            <p class="text-yellow">1191.9</p>
+                        </div>
+                        <div class="cell flex flex-column space-evenly">
+                            <p>Trần:</p>
+                            <p class="text-purple">1275.3</p>
+                        </div>
+                    </div>
+                    <table class="VN30 text-white">
+                        <tr>
+                            <td colspan="2" class="tabActive">Bước giá</td>
+                            <td colspan="2">Lịch sử khớp lệnh</td>
+                        </tr>
+                    </table>
+                    <table class="VN301 text-white">
+                        <tr>
+                            <td class="text-gray">KL Mua</td>
+                            <td class="text-gray">Giá Mua</td>
+                            <td class="text-gray">Giá Bán</td>
+                            <td class="text-gray">KL Bán</td>
+                        </tr>
+                    </table>
+                    <div class="VN30-data">
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                        <div class="data-row grid text-white">
+                            <div class="data-left grid">
+                                <div class="buy-KT">6</div>
+                                <div class="buy-price text-green">1192.2</div>
+                            </div>
+                            <div class="data-right grid">
+                                <div class="sell-price text-green">1192.5</div>
+                                <div class="sell-KT">14</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-center-bottom">
+                    <div class="bottom-table grid text-white">
+                        <div class="1">Mã</div>
+                        <div class="2">Giá</div>
+                        <div class="3">+/-</div>
+                        <div class="4">Lệch</div>
+                        <div class="5">Tổng KL</div>
+                    </div>
+                    <div class="bottom-row grid text-white">
+                        <div class="1 text-green">VN30F2104</div>
+                        <div class="2 text-green">1,192</div>
+                        <div class="3 text-green">9.0</div>
+                        <div class="4 text-green">9.0</div>
+                        <div class="5">122,443</div>
+                    </div>
+                    <div class="bottom-row grid text-white">
+                        <div class="1 text-green">VN30F2104</div>
+                        <div class="2 text-green">1,192</div>
+                        <div class="3 text-green">9.0</div>
+                        <div class="4 text-red">-9.0</div>
+                        <div class="5">122,443</div>
+                    </div>
+                    <div class="bottom-row grid text-white">
+                        <div class="1 text-green">VN30F2104</div>
+                        <div class="2 text-green">1,192</div>
+                        <div class="3 text-red">-19.0</div>
+                        <div class="4 text-green">9.0</div>
+                        <div class="5">122,443</div>
+                    </div>
+                    <div class="bottom-row grid text-white">
+                        <div class="1 text-green">VN30F2104</div>
+                        <div class="2 text-green">1,192</div>
+                        <div class="3 text-green">9.0</div>
+                        <div class="4 text-green">9.0</div>
+                        <div class="5">122,443</div>
+                    </div>
+                    <div class="bottom-row grid text-white">
+                        <div class="1 text-red">VN30F2104</div>
+                        <div class="2 text-red">1,192</div>
+                        <div class="3 text-green">9.0</div>
+                        <div class="4 text-green">9.0</div>
+                        <div class="5">122,443</div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-right grid">
+                <div class="command command-close" id="commands">
+                    <div class="command-header">
+                        <ul class="flex">
+                            <li class="tablinks1" id="actionDefault2"
+                                onclick="openDiv2(event, 'cm-tab1', 'tablinks1', 'command-close-tab')"><a href="#">Lệnh
+                                    trong ngày</a></li>
+                            <li class="tablinks1"
+                                onclick="openDiv2(event, 'cm-tab2', 'tablinks1', 'command-close-tab')"><a href="#">Lệnh
+                                    điều kiện</a></li>
+                            <li class="flex">
+                                <a href="#" class="text-orange" >
+                                    <i class="fa fa-refresh " aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="text-orange minus" onclick="closeButton('tablinks')">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="command-close-tab" id="cm-tab1">
+                        <table class="text-white" style="width: 100%; font-weight: 700;">
+                            <tr>
+                                <td>Lệnh</td>
+                                <td>Mã</td>
+                                <td>KL Khớp</td>
+                                <td>Giá</td>
+                                <td>TT</td>
+                            </tr>
+                        </table>
+                        <div class="cm-tab1-data">
+                            <table class="text-white" style="width: 100%;">
+                                <tr>
+                                    <td class="text-green">Mua</td>
+                                    <td>VNF302104</td>
+                                    <td>0/1</td>
+                                    <td>ATC</td>
+                                    <td class="text-orange flex space-between">
+                                        <div class="hourglass">
+                                            <i class="fa fa-hourglass" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="times-circle text-red">
+                                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-green">Mua</td>
+                                    <td>VNF302104</td>
+                                    <td>0/1</td>
+                                    <td>ATC</td>
+                                    <td class="text-orange flex space-between">
+                                        <div class="hourglass">
+                                            <i class="fa fa-hourglass" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="times-circle text-red">
+                                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-green">Mua</td>
+                                    <td>VNF302104</td>
+                                    <td>0/1</td>
+                                    <td>ATC</td>
+                                    <td class="text-orange flex space-between">
+                                        <div class="hourglass">
+                                            <i class="fa fa-hourglass" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="times-circle text-red">
+                                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-green">Mua</td>
+                                    <td>VNF302104</td>
+                                    <td>0/1</td>
+                                    <td>ATC</td>
+                                    <td class="text-orange flex space-between">
+                                        <div class="hourglass">
+                                            <i class="fa fa-hourglass" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="times-circle text-red">
+                                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-green">Mua</td>
+                                    <td>VNF302104</td>
+                                    <td>0/1</td>
+                                    <td>ATC</td>
+                                    <td class="text-orange flex space-between">
+                                        <div class="hourglass">
+                                            <i class="fa fa-hourglass" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="times-circle text-red">
+                                            <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="command-close-tab" id="cm-tab2">
+                        <table class="text-white" style="width: 100%; font-weight: 700;">
+                            <tr>
+                                <td>Lệnh</td>
+                                <td>Mã</td>
+                                <td>Giá kích hoạt</td>
+                                <td>KL</td>
+                                <td>Giá</td>
+                                <td>Ngày hết hạn</td>
+                                <td>TT</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="command-close" id="vi-the">
+                    <div class="command-header flex">
+                        <ul class="flex space-evenly" style="width: 335px;">
+                            <li style="margin-left: 20px"class="tablinks2" id="actionDefault3" onclick="openDiv2(event, 'cm-tab3', 'tablinks2', 'command-close-tab1')"><a href="#">Vị thế mở</a></li>
+                            <li class="tablinks2 flex space-between" style="margin-left: auto;" onclick="openDiv2(event, 'cm-tab4', 'tablinks2', 'command-close-tab1')">
+                                <a href="#">Vị thế đóng</a>
+                            </li>
+                        </ul>
+                        <ul class="flex" style="margin-left: auto;">
+                            <li >
+                                <a href="#" class="text-orange" >
+                                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li onclick="closeButton('tablinks')" >
+                                <a href="#" class="text-orange minus" style="display: block;">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="command-close-tab1" id="cm-tab3">
+                        <table class="text-white" style="width: 100%; font-weight: 700;">
+                            <tr>
+                                <td>Mã</td>
+                                <td>KL</td>
+                                <td>Giá vốn</td>
+                                <td>Gía hiện tại</td>
+                                <td>+/-</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="command-close-tab1" id="cm-tab4">
+                        <table class="text-white" style="width: 100%; font-weight: 700;">
+                            <tr>
+                                <td>Mã</td>
+                                <td>KL</td>
+                                <td>Giá mua</td>
+                                <td>Gía bán</td>
+                                <td>Lãi/lỗ đã thực hiện</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="command-close" id="tai-san">
+                    <div class="command-header">
+                        <ul class="flex">
+                            <li><a href="#">Thông tin tài sản</a></li>
+                            <li class="flex">
+                                <a href="#" class="text-orange">
+                                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="text-orange">
+                                    <i class="fa fa-refresh" class="text-orange"  aria-hidden="true"></i>
+                                </a>
+                                <a href="#" class="text-orange minus"  onclick="closeButton('tablinks')">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="Money text-white" id="tien">
+                        <div class="Money-row flex">
+                            <p>Tài sản ròng</p>
+                            <p>40.000.000</p>
+                        </div>
+                        <div class="Money-row flex">
+                            <p>Số dư kí quỹ</p>
+                            <p>24.000.000</p>
+                        </div>
+                        <div class="Money-row flex">
+                            <p>Thuế và phí</p>
+                            <p>0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-option">
+                    <div class="command-filter text-white">
+                        <div class="radius-command">
+                            <input type="radio" id="normal" name="rad-cmd" value="command-choice" checked>
+                            <label for="normal">Lệnh thường</label>
+                            <input type="radio" id="stop" name="rad-cmd" value="command-choice"
+                            onclick="showCommandFilter('command-filter','command-filter-close', 'stop')">
+                            <label for="stop"
+                            onclick="showCommandFilter('command-filter','command-filter-close', 'stop')">Lệnh Stop</label>
+                            <input type="radio" id="trailing" name="rad-cmd" disabled="true" value="command-choice">
+                            <label for="trailing">Lệnh trailing</label>
+                            <input type="radio" id="OSO" name="rad-cmd" disabled="true" value="command-choice">
+                            <label for="OSO">Lệnh OSO</label>
+                        </div>
+                        <div class="input-command flex">
+                            <div class="row grid">
+                                <label for="HDTL">Mã HĐTL:</label>
+                                <input type="text" placeholder="Mã"><br>
+                            </div>
+                            <div class="row grid">
+                                <label for="HDTL">Giá đặt:</label>
+                                <input type="text" placeholder="GIá"><br>
+                            </div>
+                            <div class="row grid">
+                                <label for="HDTL">Khối lượng:</label>
+                                <input type="text" placeholder="KL"><br>
+                            </div>
+                            <div class="confirm-command">
+                                <button class="buy-btn">MUA</button>
+                                <button class="sell-btn">BÁN</button>
+                                <input type="checkbox" id="save" name="save" value="save">
+                                <label for="save">Lưu lệnh</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="command-filter-close text-white flex flex-column space-around">
+                        <div class="radius-command">
+                            <input type="radio" id="normal" name="rad-cmd" value="command-choice"
+                            onclick="showCommandFilter('command-filter-close','command-filter', 'normal')">
+                            <label for="normal"
+                            onclick="showCommandFilter('command-filter-close','command-filter', 'normal')">Lệnh thường</label>
+                            <input type="radio" id="stop" name="rad-cmd" value="command-choice" checked>
+                            <label for="stop">Lệnh Stop</label>
+                            <input type="radio" id="trailing" name="rad-cmd" disabled="true" value="command-choice">
+                            <label for="trailing">Lệnh trailing</label>
+                            <input type="radio" id="OSO" name="rad-cmd" disabled="true" value="command-choice">
+                            <label for="OSO">Lệnh OSO</label>
+                        </div>
+                        <div class="input-command flex">
+                            <div class="row grid">
+                                <label for="HDTL">Mã HĐTL:</label>
+                                <input id="HDTL" type="text" placeholder="Mã"><br>
+                            </div>
+                            <div class="row grid">
+                                <label for="booking-price">Giá đặt:</label>
+                                <input id="booking-price" type="text" placeholder="GIá"><br>
+                            </div>
+                            <div class="row grid">
+                                <label for="quantity">Khối lượng:</label>
+                                <input id="quantity" type="text" placeholder="KL"><br>
+                            </div>
+                            <div class="row grid">
+                                <label for="expDate">Ngày hết hạn:</label>
+                                <input id="expDate" type="text" placeholder="02/04/2021"><br>
+                            </div>
+                            <div class="confirm-command">
+                                <button class="buy-btn">MUA</button>
+                                <button class="sell-btn">BÁN</button>
+                                <input type="checkbox" id="save" name="save" value="save">
+                                <label for="save">Lưu lệnh</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="command-menu">
+                        <ul class="flex">
+                            <li class="tablinks" onclick="openDiv2(event, 'commands', 'tablinks', 'command-close')"><a
+                                    href="#" id="actionDefault">Sổ lệnh</a></li>
+                            <li class="tablinks" onclick="openDiv2(event, 'vi-the', 'tablinks', 'command-close')"><a
+                                    href="#">Danh mục</a></li>
+                            <li class="tablinks" onclick="openDiv2(event, 'tai-san', 'tablinks', 'command-close')"><a
+                                    href="#">Tài sản</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+            <div class="command-menu double">
+                <ul class="flex">
+                    <li class="tablinks" id = "actionDefault" onclick="openDiv2(event, 'commands', 'tablinks', 'command-close')"><a
+                            href="#">Sổ
+                            lệnh</a></li>
+                    <li class="tablinks" onclick="openDiv2(event, 'vi-the', 'tablinks', 'command-close')"><a
+                            href="#">Danh mục</a></li>
+                    <li class="tablinks" onclick="openDiv2(event, 'tai-san', 'tablinks', 'command-close')"><a
+                            href="#">Tài sản</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script/script.js"></script>
+</body>
+
+
+</html>
